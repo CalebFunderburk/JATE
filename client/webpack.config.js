@@ -17,14 +17,14 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        favicon: './facison.ico',
+        favicon: './favicon.ico',
         title: 'Text Editor'
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'service-worker.js'
       }),
-      WebpackPwaManifest({
+      new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
         name: 'Just another text editor',
